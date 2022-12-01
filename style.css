@@ -13,6 +13,9 @@
 }
 #cintaSuperior{
     background-color: #33205A;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
 }
 nav{
