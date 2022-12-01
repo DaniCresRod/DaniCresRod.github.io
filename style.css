@@ -1,0 +1,29 @@
+*{
+    margin:0;
+    padding:0;
+    background-color: black;
+}
+#cuadroPrincipal{
+    margin: auto;
+    background-color: #64393c;
+    width: 60vw;
+    height: 70vh;
+    color: white;
+    margin-top: 10vh;
+}
+#cintaSuperior{
+    background-color: #33205A;
+
+}
+nav{
+    background-color: inherit;
+    width:33%;
+    
+}
+ul{
+    background-color: inherit;
+    list-style-type: none;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
