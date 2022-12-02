@@ -5,11 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="Imagenes/critters.png" type="image/x-icon">    
-    
-    <script src="script.js"></script>
-
-   
+    <link rel="shortcut icon" href="Imagenes/critters.png" type="image/x-icon">   
 
     <title>Pagina de SCritters</title>
 </head>
@@ -38,23 +34,37 @@
                 <div id="personas">
                     <div class="fichaPersona">                        
                         <img class="fotoPerfil" src="Imagenes/Gato.jpg" alt="Kevin">
-                        <h2 class="nombresFicha">Kevin Enrique Panjón Jara</h2>
+                        <h2 id="nombreKevin" class="nombresFicha">Kevin Enrique Panjón Jara</h2>
                     </div>
                     <div class="fichaPersona">
                         <img class="fotoPerfil" src="Imagenes/Ardilla.jpg" alt="Dani">
-                        <h2 class="nombresFicha">Daniel Crespo Rodriguez</h2>
+                        <h2 id="nombreDani" class="nombresFicha">Daniel Crespo Rodriguez</h2>
                     </div>
                 </div>
-                
-                <div id="fichaKevin" class="panelInfo">
+
+                <div id="descripcion">
+                    <div id="fichaKevin" class="panelInfo invisible" >
                     
-                    <ul>
-                        <li>Comediante</li>
-                        <li>Filósofo</li>
-                        <li>Adorador de gatos</li>
-                    </ul>
+                        <ul>
+                            <li>Comediante</li>
+                            <li>Filósofo</li>
+                            <li>Adorador de gatos</li>
+                        </ul>
                    
-                </div>
+                    </div>
+
+                    <div id="fichaDani" class="panelInfo invisible">
+                    
+                        <ul>
+                            <li>nada</li>
+                            <li>nada</li>
+                            <li>nada</li>
+                        </ul>
+                   
+                    </div>
+
+                </div>                
+                
             </div>
 
             
@@ -63,8 +73,7 @@
         </div>
         
     </div>
-
     
-    
+    <script type="module" src="script.js"></script>   
 </body>
 </html>
