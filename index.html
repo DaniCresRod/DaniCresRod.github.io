@@ -12,21 +12,21 @@
 <body>
     <div id="cuadroPrincipal">                  
 
-            <nav id="cintaSuperior">
-                <ul id="menusNavegacion">
-                    <li>
-                        <p>HTML</p>
-                    </li>
-                    <li>
-                        <p>CSS</p>
-                    </li>
-                    <li>
-                        <p>JavaScript</p>
-                    </li>
-                </ul>
-            </nav>        
+        <nav id="cintaSuperior">
+            <ul id="menusNavegacion">
+                <li>
+                    <p>HTML</p>
+                </li>
+                <li>
+                    <p>CSS</p>
+                </li>
+                <li>
+                    <p>JavaScript</p>
+                </li>
+            </ul>
+        </nav>        
 
-        <div id="cuadroContenido">
+        <div id="cuadroContenido1" class="cuadroContenido">
             <h1>The SCriptters</h1>
            
             <div id="subzonaInfo">
@@ -65,11 +65,271 @@
 
                 </div>                
                 
-            </div>
+            </div>           
+            
+        </div>
+        <div id="cuadroContenidoHTML" class="cuadroContenido fichaNav">
+            <pre><code>
+                
 
             
-            
-            
+
+            </code></pre>
+
+
+        </div>
+        <div id="cuadroContenidoCSS" class="cuadroContenido fichaNav">
+            <pre><code>
+                *{
+                    margin:0;
+                    padding:0;
+                    font-family: Verdana, Geneva, Tahoma, sans-serif;    
+                }
+                body{
+                    background-color: rgb(43, 43, 43);
+                }
+                
+                /*div principal donde se mostrara el contenido. Se pone un tamaño minimo
+                de 640x640*/
+                #cuadroPrincipal{
+                    margin: auto;
+                    background-color: #64393c;
+                    width: 40vw;
+                    min-width: 480px;
+                    height: 70vh;
+                    color: white;
+                    margin-top: 10vh;
+                    
+                    position: relative;
+                }
+                
+                #cintaSuperior{
+                    background-color: #33205A;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    height: 4vh;
+                    
+                }
+                
+                /*Se quitan los bullets de la lista y se pone horizontal*/
+                #menusNavegacion{
+                    list-style-type: none;
+                    display:flex;
+                    justify-content: space-evenly;
+                    width: 40%;
+                }
+                
+                #subzonaInfo{
+                    height: 50vh;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;    
+                
+                    align-items:center;
+                    justify-content:center;
+                }
+                
+                #personas{
+                    width: 66%;
+                    height: 40vh;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content:space-between;
+                    padding: 0px 6%;
+                }
+                
+                .fichaPersona{
+                    height: 12vh;
+                    background-color: #2F6164;
+                    border-radius: 30px;
+                    padding: 4%;
+                
+                    display: flex;
+                    align-items: center;
+                    overflow: hidden;
+                }
+                
+                .fotoPerfil{
+                    height: 10vh;    
+                    width: 10vh;
+                    object-fit: cover;   
+                    
+                    border-radius: 50%;
+                }
+                
+                .nombresFicha{
+                    width: calc(100% - 10vh - 2vw);
+                    margin-left: 2vw;
+                    font-size: calc( 1em + 0.2vh + 0.1vw );
+                }
+                
+                /*.panelInfo{*/
+                #descripcion{
+                    width: 33%;
+                    height: 40vh;
+                    
+                    margin-right: 2vw;
+                    
+                    
+                     
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;     
+                    
+                    font-size: calc( 1em + 0.2vh + 0.1vw );
+                
+                }
+                
+                .panelInfo{
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 30px;
+                    background-color: #C09D22;
+                    padding: 5vh 0;
+                    overflow-y: auto;
+                    overflow-x: hidden;
+                
+                }
+                
+                .panelInfo &gt; ul{
+                    height: 100%;
+                    list-style-type: none;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content:space-evenly;
+                    align-items: center;
+                    
+                    overflow: auto;
+                }
+                .panelInfo li{
+                    text-align: center;    
+                }
+                
+                #cuadroContenido1{
+                    position: absolute;
+                       
+                }
+                
+                .cuadroContenido{
+                    display: flex;
+                    flex-direction: column;    
+                    justify-content: space-evenly;
+                    align-items:center;
+                    height: 66vh;
+                    width: 100%;
+                }
+                
+                .invisible{
+                    display:none;
+                }
+                
+                .fichaNav{
+                    position: absolute;
+                    z-index: -1;
+                    overflow-y: auto;
+                    overflow-x: hidden;    
+                }
+                
+                #cuadroContenidoCSS{      
+                    background-color: #22c049;     
+                }
+                
+                #cuadroContenidoJS{      
+                    background-color: #22a0c0;      
+                }
+                
+                #cuadroContenidoHTML{      
+                    background-color: #C09D22;      
+                }
+                
+                pre{
+                    font-size: 70%;
+                }
+                
+                @media screen and (max-height: 600px){
+                    
+                    #subzonaInfo{
+                        flex-direction: column;
+                    }
+                
+                    .fichaPersona{
+                        height: 6.5vh;
+                        font-size: 3vh;
+                        max-height: 50%;
+                        margin: 1vh 0vh;
+                    }
+                
+                    #cuadroPrincipal{
+                        overflow-y: auto;
+                    }
+                
+                    #descripcion{
+                        margin-top: 2vh;
+                    }
+                    
+                    #personas{
+                        width: 80%;
+                    }
+                
+                    h1{
+                        font-size: calc(0.5em + 2vh);
+                    }
+                
+                    .panelInfo li{
+                        font-size: calc(0.5em + 1vh);
+                    }
+                
+                    #menusNavegacion{
+                        font-size: calc(0.5em + 1vh);
+                    }
+                }
+
+            </code></pre>
+
+
+        </div>
+        <div id="cuadroContenidoJS" class="cuadroContenido fichaNav">
+            <code><pre>
+    let nomKevin = document.getElementById("nombreKevin");
+    let nomDani = document.getElementById("nombreDani");
+
+    let fichKevin=document.getElementById("fichaKevin");
+    let fichDani=document.getElementById("fichaDani");
+
+    nomKevin.addEventListener("click", function(){cambiaInfo(fichKevin, fichDani)});
+    nomDani.addEventListener("click", function(){cambiaInfo (fichDani, fichKevin)});
+
+    function cambiaInfo( fichaActiva, fichaInactiva){
+        if(fichaActiva.classList.contains("invisible")){
+            fichaActiva.classList.remove("invisible");
+            fichaInactiva.classList.add("invisible");        
+        }
+        else{
+            fichaActiva.classList.add("invisible");        
+        }
+    }
+
+    //Esconde todas las fichas del navegador
+    let elijoHTML=document.querySelectorAll("#menusNavegacion p");
+    elijoHTML[0].addEventListener("click", function(){escondefichas(0)});
+    elijoHTML[1].addEventListener("click", function(){escondefichas(1)});
+    elijoHTML[2].addEventListener("click", function(){escondefichas(2)});
+
+    function escondefichas(numero){
+        let fichasdeNavegar=document.querySelectorAll(".fichaNav");
+        if(fichasdeNavegar[numero].style.zIndex=="2"){
+            fichasdeNavegar[numero].style.zIndex="-1"
+        }
+        else{
+            for(let i=0; i&lt;fichasdeNavegar.length; i++){
+                fichasdeNavegar[i].style.zIndex="-1";
+            }
+            fichasdeNavegar[numero].style.zIndex="2";
+        }
+    }
+            </pre></code>
         </div>
         
     </div>

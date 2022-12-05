@@ -17,6 +17,8 @@ de 640x640*/
     height: 70vh;
     color: white;
     margin-top: 10vh;
+    
+    position: relative;
 }
 
 #cintaSuperior{
@@ -34,16 +36,6 @@ de 640x640*/
     display:flex;
     justify-content: space-evenly;
     width: 40%;
-}
-#cuadroContenido{
-    display: flex;
-    flex-direction: column;    
-    justify-content: space-evenly;
-    align-items:center;
-    height: 65vh;
-    width: 100%;
-
-    
 }
 
 #subzonaInfo{
@@ -114,6 +106,8 @@ de 640x640*/
     border-radius: 30px;
     background-color: #C09D22;
     padding: 5vh 0;
+    overflow-y: auto;
+    overflow-x: hidden;
 
 }
 
@@ -131,16 +125,83 @@ de 640x640*/
     text-align: center;    
 }
 
-#fichaKevin{
-     
+#cuadroContenido1{
+    position: absolute;
+       
 }
 
-#fichaDani{
-    
+.cuadroContenido{
+    display: flex;
+    flex-direction: column;    
+    justify-content: space-evenly;
+    align-items:center;
+    height: 66vh;
+    width: 100%;
 }
 
 .invisible{
     display:none;
+}
+
+.fichaNav{
+    position: absolute;
+    z-index: -1;
+    overflow-y: auto;
+    overflow-x: hidden;    
+}
+
+#cuadroContenidoCSS{      
+    background-color: #22c049;     
+}
+
+#cuadroContenidoJS{      
+    background-color: #22a0c0;      
+}
+
+#cuadroContenidoHTML{      
+    background-color: #C09D22;      
+}
+
+pre{
+    font-size: 70%;
+}
+
+@media screen and (max-height: 600px){
+    
+    #subzonaInfo{
+        flex-direction: column;
+    }
+
+    .fichaPersona{
+        height: 6.5vh;
+        font-size: 3vh;
+        max-height: 50%;
+        margin: 1vh 0vh;
+    }
+
+    #cuadroPrincipal{
+        overflow-y: auto;
+    }
+
+    #descripcion{
+        margin-top: 2vh;
+    }
+    
+    #personas{
+        width: 80%;
+    }
+
+    h1{
+        font-size: calc(0.5em + 2vh);
+    }
+
+    .panelInfo li{
+        font-size: calc(0.5em + 1vh);
+    }
+
+    #menusNavegacion{
+        font-size: calc(0.5em + 1vh);
+    }
 }
 
 
