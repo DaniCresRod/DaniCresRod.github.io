@@ -69,34 +69,246 @@
             
         </div>
         <div id="cuadroContenidoHTML" class="cuadroContenido fichaNav">
-            <pre><code>
-                
-
-            
+            <pre><code>              
 
             </code></pre>
 
 
         </div>
         <div id="cuadroContenidoCSS" class="cuadroContenido fichaNav">
-            <pre><code>
+            <code><pre>    
+    *{
+        margin:0;
+        padding:0;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;    
+    }
+
+    body{
+        background-color: rgb(43, 43, 43);
+    }
                 
-
-            </code></pre>
-
+    /*div principal donde se mostrara el contenido. Se pone un tamaño minimo
+    de 480 de ancho*/
+    #cuadroPrincipal{
+        margin: auto;
+        background-color: #64393c;
+        width: 40vw;
+        min-width: 480px;
+        height: 70vh;
+        color: white;
+        margin-top: 10vh;
+                    
+        position: relative;
+    }
+                
+    #cintaSuperior{
+        background-color: #33205A;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        height: 4vh;    
+    }
+                
+    /*Se quitan los bullets de la lista*/
+    #menusNavegacion{
+        list-style-type: none;
+        display:flex;
+        justify-content: space-evenly;
+        width: 40%;
+    }
+                
+    /*Alberga las fichas de cada persona y la info para mostrar/ocultar*/
+    #subzonaInfo{
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    
+    align-items:center;
+    justify-content:center;
+    }
+    
+    /*Alberga las fichas de cada persona*/
+    #personas{
+        width: 66%;
+        height: 40vh;
+        display: flex;
+        flex-direction: column;
+        justify-content:space-between;
+        padding: 0px 6%;
+    }
+    
+    /*Cada ficha de cada persona*/
+    .fichaPersona{
+        height: 12vh;
+        background-color: #2F6164;
+        border-radius: 30px;
+        padding: 4%;
+        
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+    }
+    
+    /*Las fotos de cada .fichaPersona*/
+    .fotoPerfil{
+        height: 10vh;
+        width: 10vh;
+        object-fit: cover;
+        
+        border-radius: 50%;
+    }
+    
+    /*El texto de cada .fichaPersona*/
+    .nombresFicha{
+        width: calc(100% - 10vh - 2vw);
+        margin-left: 2vw;
+        font-size: calc( 1em + 0.2vh + 0.1vw );
+    }
+    
+    /*Contenedor de la info a mostrar/ocultar*/
+    #descripcion{
+        width: 33%;
+        height: 40vh;
+        
+        margin-right: 2vw;
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+        /*Calcula el tamaño de la fuente a partir del tamaño de la pantalla*/
+        font-size: calc( 1em + 0.2vh + 0.1vw );
+    }
+    
+    /*Comun de la informacion que quiero mostrar*/
+    .panelInfo{
+        width: 100%;
+        height: 100%;
+        border-radius: 30px;
+        background-color: #C09D22;
+        padding: 5vh 0;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    
+    .panelInfo > ul{
+        height: 100%;
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        justify-content:space-evenly;
+        align-items: center;
+        
+        overflow: auto;
+    }
+    .panelInfo li{
+        text-align: center;
+    }
+    
+    /*Lo que se verá por defecto*/
+    #cuadroContenidoPrincipal{
+        position: absolute;    
+    }
+    
+    .cuadroContenido{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items:center;
+        height: 66vh;
+        width: 100%;
+    }
+    
+    /*Clase que al añadirla a las del objeto hace que no se muestre*/
+    .invisible{
+        display:none;
+    }
+    
+    /*Comun de cada una de las fichas que tapan todo el contenido cuando se muestran a partir del nav*/
+    .fichaNav{
+        position: absolute;
+        z-index: -1;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    
+    #cuadroContenidoCSS{
+        background-color: #22c049;
+    }
+    
+    #cuadroContenidoJS{
+        background-color: #22a0c0;
+        text-align: left;
+    }
+    
+    #cuadroContenidoHTML{
+        background-color: #C09D22;
+    }
+    
+    code{
+        width:100%;
+        height: 100%;
+        font-size: 70%;
+    }
+    
+    /*Estilos si la pantalla es mas pequeña de 600px*/
+    @media screen and (max-height: 600px){
+    
+    #subzonaInfo{
+        flex-direction: column;
+    }
+    
+    .fichaPersona{
+        height: 6.5vh;
+        font-size: 3vh;
+        max-height: 50%;
+        margin: 1vh 0vh;
+    }
+    
+    #cuadroPrincipal{
+        overflow-y: auto;
+    }
+    
+    #descripcion{
+        margin-top: 2vh;
+    }
+    
+    #personas{
+        width: 80%;
+    }
+    
+    h1{
+        font-size: calc(0.5em + 2vh);
+    }
+    
+    .panelInfo li{
+        font-size: calc(0.5em + 1vh);
+    }
+    
+    #menusNavegacion{
+        font-size: calc(0.5em + 1vh);
+    }
+    }
+            </pre></code>
 
         </div>
         <div id="cuadroContenidoJS" class="cuadroContenido fichaNav">
             <code><pre>
+    //Funcion que muestra/esconde un div con informacion al hacer click en el nombre de cada persona
+    //Lo hago alternando la clase CSS "invisible" entre las asignadas a la capa que quiero mostrar/ocultar
+    //Esta capa tiene el atributo "display:none"
+                
     let nomKevin = document.getElementById("nombreKevin");
     let nomDani = document.getElementById("nombreDani");
-
+                
     let fichKevin=document.getElementById("fichaKevin");
-    let fichDani=document.getElementById("fichaDani");
-
+    let fichDani=document.getElementById("fichaDani");                                            
+    
     nomKevin.addEventListener("click", function(){cambiaInfo(fichKevin, fichDani)});
     nomDani.addEventListener("click", function(){cambiaInfo (fichDani, fichKevin)});
-
+                
     function cambiaInfo( fichaActiva, fichaInactiva){
         if(fichaActiva.classList.contains("invisible")){
             fichaActiva.classList.remove("invisible");
@@ -106,13 +318,15 @@
             fichaActiva.classList.add("invisible");        
         }
     }
-
-    //Esconde todas las fichas del navegador
+                
+    //Esconde todas las fichas del navegador y muestra solo la que se clica
+    //Funcion parecida a la anterior para segir con la practica
+    //Esta vez uso el atributo z-index para mostrar/ocultar las capas
     let elijoHTML=document.querySelectorAll("#menusNavegacion p");
     elijoHTML[0].addEventListener("click", function(){escondefichas(0)});
     elijoHTML[1].addEventListener("click", function(){escondefichas(1)});
     elijoHTML[2].addEventListener("click", function(){escondefichas(2)});
-
+                
     function escondefichas(numero){
         let fichasdeNavegar=document.querySelectorAll(".fichaNav");
         if(fichasdeNavegar[numero].style.zIndex=="2"){
@@ -125,6 +339,14 @@
             fichasdeNavegar[numero].style.zIndex="2";
         }
     }
+                
+    //Funcion que muestra una ventana emergente cuando la pantalla es menor de 100px
+    //para completar el responsive
+    window.addEventListener("resize", function(){
+    if(window.innerHeight&lt;100){
+        alert("bastante pequeña ya, no??");        
+    } 
+    });
             </pre></code>
         </div>
         
